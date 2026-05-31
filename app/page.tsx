@@ -3,6 +3,8 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Section from "@/components/section/section";
 import SectionHeading from "@/components/section/section-heading";
+import ExperimentCard from "@/components/experimentCard/experiment-card";
+import CaseStudyCard from "@/components/caseStudyCard/case-study-card";
 
 export default function Home() {
   return (
@@ -13,16 +15,34 @@ export default function Home() {
         <Section>
           <Container>
             <h1 className="text-display max-w-3xl font-semibold tracking-tight">
-              A live CRO portfolio focused on experimentation,
-              behavior, and conversion-focused experiences.
+              A live CRO portfolio focused on
+              <span className="text-accent"> experimentation </span>,
+              <span className="text-muted-blue"> behavior </span>,
+              and
+              <span className="text-soft-gold">
+                conversion-focused
+              </span>
+              experiences.
             </h1>
-            <div className="mt-6 flex gap-4">
-              <button className="border border-black/10 px-4 py-2">
-                Download Resume
-              </button>
-              <button className="border border-black/10 px-4 py-2">
-                Contact
-              </button>
+            <div className="mt-12 flex gap-8 text-sm">
+              <a
+                href="/experiments"
+                className="
+                group
+                inline-flex
+                items-center
+                gap-2
+                text-foreground/80
+                transition-all
+                duration-300
+                hover:text-foreground
+                "
+              >
+                Explore the live experiment
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
             </div>
           </Container>
         </Section>
@@ -31,8 +51,10 @@ export default function Home() {
           <Container>
             <SectionHeading
               title="Live Experiment"
-              description="This portfolio will run an A/B test using middleware-based variant assignment."
+              description="You may not be seeing the same version as other visitors."
             />
+
+            <ExperimentCard variantValue="A" />
           </Container>
         </Section>
 
@@ -40,12 +62,12 @@ export default function Home() {
           <Container>
             <SectionHeading
               title="Featured Case Study"
-              description="Understanding friction points in a SaaS free trial funnel."
+              description="How I approached UX analysis, messaging, and storytelling during BigCommerce's transition toward a small-business audience."
             />
+            <CaseStudyCard/>
           </Container>
         </Section>
       </main>
-
       <Footer />
     </>
   );
