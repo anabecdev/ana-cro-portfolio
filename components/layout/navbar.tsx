@@ -1,19 +1,45 @@
 import Link from "next/link";
 import Container from "../container/container";
+import NavLink from "./navlink";
 
 export default function Navbar() {
   return (
-    <header className="border-b border-black/10 bg-background">
-      <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="font-medium">
+    <header
+      className="
+        sticky
+        top-0
+        z-50
+        bg-background/70
+        backdrop-blur-md
+      "
+    >
+      <Container className="flex items-center justify-between py-6">
+        <Link
+          href="/"
+          className="
+            text-2xl
+            font-semibold
+            tracking-tight
+            transition-opacity
+            duration-300
+            hover:opacity-70
+          "
+        >
           Ana Becerril
         </Link>
 
-        <nav className="flex gap-6 text-sm">
-          <Link href="/case-studies">Case Studies</Link>
-          <Link href="/experiments">Experiments</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <nav className="flex gap-8">
+          <NavLink href="/case-studies">
+            Case Studies
+          </NavLink>
+
+          <NavLink href="/experiments">
+            Experiments
+          </NavLink>
+
+          <NavLink href="/about">
+            About
+          </NavLink>
         </nav>
       </Container>
     </header>
