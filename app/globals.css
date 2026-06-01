@@ -70,3 +70,31 @@ body {
     border-color 0.3s ease,
     color 0.3s ease;
 }
+
+.variant-a {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(200, 179, 138, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(178, 167, 184, 0.1),
+      transparent 40%
+    );
+}
+
+.variant-b {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(141, 163, 179, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(125, 155, 138, 0.1),
+      transparent 40%
+    );
+}

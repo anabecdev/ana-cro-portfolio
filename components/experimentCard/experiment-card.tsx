@@ -1,11 +1,11 @@
 type ExperimentCardProps = {
-    variantValue: string;
+  variantValue: string;
 };
 
-export default function ExperimentCard({ variantValue = "A" }: ExperimentCardProps) {
-    return (
-        <div
-            className="
+export default function ExperimentCard({ variantValue }: ExperimentCardProps) {
+  return (
+    <div
+      className="
             mt-12
             max-w-2xl
             border
@@ -19,64 +19,68 @@ export default function ExperimentCard({ variantValue = "A" }: ExperimentCardPro
             hover:border-foreground/30
             hover:shadow-[0_0_40px_rgba(255,255,255,0.03)]
                                     "
-        >
-            <p className="text-xs uppercase tracking-[0.2em] text-foreground/60">
-                Experiment #001
-            </p>
+    >
+      <p className="text-xs uppercase tracking-[0.2em] text-foreground/60">
+        Experiment #001
+      </p>
 
-            <h3 className="mt-4 text-2xl font-semibold tracking-tight">
-                Resume Visibility Test
-            </h3>
+      <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+        Resume Visibility Test
+      </h3>
 
-            <div className="mt-6 h-px w-full bg-foreground/10" />
+      <div className="mt-6 h-px w-full bg-foreground/10" />
 
-            <div className="mt-8">
-                <p className="text-sm uppercase tracking-wide text-foreground/60">
-                    Hypothesis
-                </p>
+      <div className="mt-8">
+        <p className="text-sm uppercase tracking-wide text-foreground/60">
+          Hypothesis
+        </p>
 
-                <p className="mt-2 max-w-md text-body">
-                    Showing the resume immediately will increase downloads.
-                </p>
-            </div>
+        <p className="mt-2 max-w-md text-body">
+          Showing the resume immediately will increase downloads.
+        </p>
+      </div>
 
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
-                <div>
-                    <p className="text-sm uppercase tracking-wide text-foreground/60">
-                        Variant A
-                    </p>
+      <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div>
+          <p className="text-sm uppercase tracking-wide text-foreground/60">
+            Variant A
+          </p>
 
-                    <p className="mt-2">
-                        Resume visible
-                    </p>
-                </div>
+          <p className="mt-2">
+            Resume visible
+            <br />
+            Warm visual atmosphere
+          </p>
+        </div>
 
-                <div>
-                    <p className="text-sm uppercase tracking-wide text-foreground/60">
-                        Variant B
-                    </p>
+        <div>
+          <p className="text-sm uppercase tracking-wide text-foreground/60">
+            Variant B
+          </p>
 
-                    <p className="mt-2">
-                        Resume hidden
-                    </p>
-                </div>
-            </div>
+          <p className="mt-2">
+            Resume hidden
+            <br />
+            Cool visual atmosphere
+          </p>
+        </div>
+      </div>
 
-            <div className="mt-10 h-px w-full bg-foreground/10" />
+      <div className="mt-10 h-px w-full bg-foreground/10" />
 
-            <div className="mt-8">
-                <p className="text-sm uppercase tracking-wide text-foreground/60">
-                    Current Assignment
-                </p>
+      <div className="mt-8">
+        <p className="text-sm uppercase tracking-wide text-foreground/60">
+          Current Assignment
+        </p>
 
-                <p className="mt-2">
-                    You are currently viewing: <strong> Variant {variantValue} </strong>
-                </p>
-            </div>
+        <p className="mt-2">
+          You are currently viewing: <strong> Variant {variantValue} </strong>
+        </p>
+      </div>
 
-            <a
-                href="/experiments"
-                className="
+      <a
+        href="/experiments"
+        className="
                             group
                             mt-10
                             inline-flex
@@ -86,20 +90,19 @@ export default function ExperimentCard({ variantValue = "A" }: ExperimentCardPro
                             hover:opacity-70
                             font-medium
                             "
-            >
-                Explore the methodology
-
-                <span
-                    className="
+      >
+        Explore the methodology
+        <span
+          className="
                     inline-block
                     transition-transform
                     duration-300
                     group-hover:translate-x-1
                 "
-                >
-                    →
-                </span>
-            </a>
-        </div>
-    );
+        >
+          →
+        </span>
+      </a>
+    </div>
+  );
 }
