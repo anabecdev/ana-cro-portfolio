@@ -1,19 +1,15 @@
-import CaseStudyCard from "@/components/caseStudyCard/case-study-card";
+import CaseStudyCard from "@/components/caseStudy/caseStudyCard/case-study-card";
 import Container from "@/components/container/container";
-import ExperimentCard from "@/components/experimentCard/experiment-card";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
+import ExperimentCard from "@/components/experiment/experimentCard/experiment-card";
 import Section from "@/components/section/section";
 import SectionHeading from "@/components/section/section-heading";
 
 import { getVariant } from "@/lib/ab-testing/getVariant";
-import clsx from "clsx";
 
 export default async function Home() {
   const variant = await getVariant();
   return (
     <>
-      <Navbar />
 
       <main
         className={`
@@ -100,7 +96,6 @@ export default async function Home() {
           </Container>
         </Section>
       </main>
-      <Footer />
     </>
   );
 }
