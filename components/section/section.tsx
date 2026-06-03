@@ -11,8 +11,7 @@ export default function Section({
     <section
       className={`
         py-24
-        border-b
-        border-black/5
+      
         ${className}
       `}
     >
