@@ -10,7 +10,6 @@ export default async function Home() {
   const variant = await getVariant();
   return (
     <>
-
       <main
         className={`
           transition-colors
@@ -34,7 +33,10 @@ export default async function Home() {
             <div className="mt-12 flex gap-8 text-sm">
               {variant === "A" && (
                 <a
-                  href="/resume.pdf"
+                  href="/resume/ana-becerril-resume-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
                   className="
                     group
                     inline-flex
@@ -47,7 +49,7 @@ export default async function Home() {
                     hover:opacity-70
                   "
                 >
-                  Download Resume
+                  Download Resume PDF
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
