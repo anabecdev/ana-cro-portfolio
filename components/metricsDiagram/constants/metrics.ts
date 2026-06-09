@@ -3,14 +3,14 @@ import { Metric } from "../types";
 export const METRICS: Metric[] = [
   {
     label: "Primary",
-    value: "Resume Downloads",
+    value: "Contact CTA Clicks",
   },
   {
     label: "Secondary",
-    value: "Experiment Engagement",
+    value: "Resume Downloads",
   },
   {
     label: "Exploratory",
-    value: "Case Study Views",
+    value: "Experiment Engagement",
   },
 ];
