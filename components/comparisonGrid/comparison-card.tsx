@@ -1,18 +1,18 @@
 import Image from "next/image";
 
-type VariantCardProps = {
-  variant: string;
+type ComparisonCardProps = {
+  label: string;
   title: string;
   description: string[];
   image: string;
 };
 
-export default function VariantCard({
-  variant,
+export default function ComparisonCard({
+  label,
   title,
   description,
   image,
-}: VariantCardProps) {
+}: ComparisonCardProps) {
   return (
     <article
       className="
@@ -20,12 +20,15 @@ export default function VariantCard({
         overflow-hidden
         border
         border-foreground/10
+        transition-colors
+        duration-500
+        hover:border-foreground/20
       "
     >
       <div className="overflow-hidden">
         <Image
           src={image}
-          alt={`Variant ${variant}`}
+          alt={title}
           width={1600}
           height={900}
           className="
@@ -39,7 +42,7 @@ export default function VariantCard({
 
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.2em] text-foreground/60">
-          Variant {variant}
+          {label}
         </p>
 
         <h3 className="mt-3 text-2xl font-semibold">{title}</h3>
