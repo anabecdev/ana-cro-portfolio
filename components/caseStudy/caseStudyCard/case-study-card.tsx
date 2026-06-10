@@ -32,8 +32,9 @@ export default function CaseStudyCard() {
         </p>
 
         <p className="mt-2 max-w-md text-body">
-          Understanding friction points while repositioning a SaaS brand from
-          enterprise-focused to small-business friendly.
+          Understanding why competitors resonated more effectively with small
+          businesses and identifying opportunities to reposition BigCommerce for
+          that audience.
         </p>
       </div>
 
@@ -43,7 +44,7 @@ export default function CaseStudyCard() {
             Research
           </p>
 
-          <p className="mt-2">UX Audit</p>
+          <p className="mt-2">Competitor Benchmarking</p>
         </div>
 
         <div>
@@ -51,7 +52,7 @@ export default function CaseStudyCard() {
             Focus
           </p>
 
-          <p className="mt-2">Messaging & Storytelling</p>
+          <p className="mt-2">Positioning & Conversion</p>
         </div>
 
         <div>
@@ -59,7 +60,7 @@ export default function CaseStudyCard() {
             Outcome
           </p>
 
-          <p className="mt-2">Strategic & Actionable Insights</p>
+          <p className="mt-2">Strategic, Insights & Experimentation Roadmap </p>
         </div>
       </div>
 
@@ -71,13 +72,14 @@ export default function CaseStudyCard() {
         </p>
 
         <p className="mt-2 max-w-md">
-          The experience often communicated complexity when the goal was
-          approachability and accessibility for smaller businesses.
+          Competitors led with aspiration, simplicity, and emotional connection,
+          while BigCommerce emphasized technical capabilities that were less
+          relevant to small-business decision makers.
         </p>
       </div>
 
       <a
-        href="/case-studies/bigcommerce-rebrand"
+        href="/case-studies"
         className="
           group
           mt-10
