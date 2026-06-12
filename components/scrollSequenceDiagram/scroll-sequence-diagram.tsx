@@ -35,25 +35,47 @@ export default function ScrollSequenceDiagram({
       `}
     >
       {steps.map((step, index) => (
-        <Fragment key={step}>
-          <p
+        <Fragment key={step.title}>
+          <div
             data-step
             className="
-              text-[clamp(4rem,10vw,8rem)]
-              font-semibold
-              tracking-tight
-              leading-none
-            "
+        flex
+        flex-col
+        items-center
+      "
           >
-            {step}
-          </p>
+            <p
+              className="
+          text-[clamp(4rem,10vw,8rem)]
+          font-semibold
+          tracking-tight
+          leading-none
+        "
+            >
+              {step.title}
+            </p>
+
+            {step.description && (
+              <p
+                className="
+            mt-4
+            max-w-xl
+            text-center
+            text-lg
+            text-foreground/60
+          "
+              >
+                {step.description}
+              </p>
+            )}
+          </div>
 
           {index < steps.length - 1 && (
             <p
               data-step
               className={
                 direction === "vertical"
-                  ? "my-8 text-[clamp(3rem,6vw,5rem)]"
+                  ? "my-12 text-[clamp(3rem,6vw,5rem)]"
                   : "mx-4 text-[clamp(3rem,6vw,5rem)]"
               }
             >

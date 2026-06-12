@@ -66,11 +66,11 @@ export default function CaseStudiesPage() {
           <ScrollSequenceDiagram
             direction="vertical"
             steps={[
-              "Competitors",
-              "Customer Reviews",
-              "UX Analysis",
-              "Insights",
-              "Recommendations",
+              { title: "Competitors" },
+              { title: "Customer Reviews" },
+              { title: "UX Analysis" },
+              { title: "Insights" },
+              { title: "Recommendations" },
             ]}
           />
         </Container>

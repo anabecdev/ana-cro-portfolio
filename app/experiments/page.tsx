@@ -71,7 +71,12 @@ export default async function ExperimentsPage() {
           />
           <ScrollSequenceDiagram
             direction="vertical"
-            steps={["Visitor", "Middleware", "Cookie", `Variant ${variant}`]}
+            steps={[
+              { title: "Visitor" },
+              { title: "Middleware" },
+              { title: "Cookie" },
+              { title: `Variant ${variant}` },
+            ]}
           />
         </Container>
       </Section>
