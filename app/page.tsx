@@ -1,8 +1,6 @@
-import CaseStudyCard from "@/components/caseStudy/caseStudyCard/case-study-card";
 import Container from "@/components/container/container";
-import ExperimentCard from "@/components/experiment/experimentCard/experiment-card";
+import FeaturedSection from "@/components/featuredSection/featured-section";
 import Section from "@/components/section/section";
-import SectionHeading from "@/components/section/section-heading";
 
 import { getVariant } from "@/lib/ab-testing/getVariant";
 
@@ -21,13 +19,26 @@ export default async function Home() {
           <Container>
             {variant === "A" ? (
               <h1 className="text-display max-w-3xl font-semibold tracking-tight">
-                A live CRO portfolio focused on experimentation, behavior, and
-                conversion-focused experiences.
+                Frontend engineer,
+                <br />
+                UX analyst,
+                <br />
+                and experimentation
+                <br />
+                practitioner.
               </h1>
             ) : (
               <h1 className="text-display max-w-3xl font-semibold tracking-tight">
-                A portfolio exploring experimentation, user behavior, and
-                conversion optimization.
+                I study how people
+                <br />
+                make decisions.
+                <br />
+                <br />
+                Then I build,
+                <br />
+                measure,
+                <br />
+                and iterate.
               </h1>
             )}
             <div className="mt-12 flex gap-8 text-sm">
@@ -79,22 +90,42 @@ export default async function Home() {
 
         <Section>
           <Container>
-            <SectionHeading
+            <FeaturedSection
+              experimentNumber="01"
               title="Live Experiment"
-              description="You may not be seeing the same version as other visitors."
+              subtitle="This portfolio is running a real A/B test."
+              description="Some visitors see the resume immediately. Others discover it later through the experience."
+              quote="What happens when the resume isn't the first thing people see?"
+              keywords={[
+                "A/B Testing",
+                "User Behavior",
+                "Conversion",
+                "Experimentation",
+              ]}
+              cta="Explore methodology"
+              href="/experiments"
             />
-
-            <ExperimentCard variantValue={variant} />
           </Container>
         </Section>
 
         <Section>
           <Container>
-            <SectionHeading
+            <FeaturedSection
+              experimentNumber="02"
               title="Featured Case Study"
-              description="How I approached UX analysis, messaging, and storytelling during BigCommerce's transition toward a small-business audience."
+              subtitle="Why were Shopify and WooCommerce resonating more strongly with small businesses?"
+              description="Through competitor benchmarking, UX analysis, customer research, and messaging evaluation, I explored how perception, storytelling, and product positioning influenced conversion opportunities."
+              quote="Competitors sold aspiration and simplicity. BigCommerce often communicated complexity."
+              keywords={[
+                "Benchmarking",
+                "UX Research",
+                "Positioning",
+                "Storytelling",
+                "Conversion",
+              ]}
+              cta="Read case study"
+              href="/case-studies"
             />
-            <CaseStudyCard />
           </Container>
         </Section>
       </main>
