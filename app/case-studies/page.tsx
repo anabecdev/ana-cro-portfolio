@@ -10,9 +10,18 @@ import { customerThemes } from "@/components/caseStudy/constants/customerThemes"
 import { insights } from "@/components/caseStudy/constants/insights";
 import { recommendations } from "@/components/caseStudy/constants/recommendations";
 
-export default function CaseStudiesPage() {
+import { getVariant } from "@/lib/ab-testing/getVariant";
+
+export default async function CaseStudiesPage() {
+  const variant = await getVariant();
   return (
-    <main>
+    <main
+      className={`
+          transition-colors
+          duration-1000
+          ${variant === "A" ? "variant-a" : "variant-b"}
+        `}
+    >
       <Section className="min-h-[85vh] flex flex-col justify-center">
         <Container>
           <Hero
@@ -66,11 +75,29 @@ export default function CaseStudiesPage() {
           <ScrollSequenceDiagram
             direction="vertical"
             steps={[
-              { title: "Competitors" },
-              { title: "Customer Reviews" },
-              { title: "UX Analysis" },
-              { title: "Insights" },
-              { title: "Recommendations" },
+              {
+                title: "Competitors",
+                description:
+                  "What are competitors communicating that we are not?",
+              },
+              {
+                title: "Customer Reviews",
+                description:
+                  "What do customers value, criticize, or wish was different?",
+              },
+              {
+                title: "UX Analysis",
+                description:
+                  "Where are the biggest friction points and missed opportunities?",
+              },
+              {
+                title: "Insights",
+                description: "What story do all the signals tell together?",
+              },
+              {
+                title: "Recommendations",
+                description: "Which opportunities are worth testing first?",
+              },
             ]}
           />
         </Container>
@@ -145,11 +172,13 @@ export default function CaseStudiesPage() {
 
                 <h3
                   className="
+                  
               mt-8
               text-[clamp(2.5rem,5vw,5rem)]
               leading-[1]
               font-semibold
               tracking-tight
+              max-w-[90vw]
             "
                 >
                   The research findings aligned with what customers were already
@@ -225,7 +254,7 @@ export default function CaseStudiesPage() {
             </h2>
           </div>
 
-          <div className="mt-16 border-t border-foreground/10">
+          <div className="mt-16 max-w-5xl mx-auto border-t border-foreground/10">
             {recommendations.map((item) => (
               <div
                 key={item.recommendation}
@@ -235,7 +264,8 @@ export default function CaseStudiesPage() {
             border-b
             border-foreground/10
             py-8
-            md:grid-cols-[2fr_1fr_1fr]
+            md:grid-cols-[3fr_1.5fr]
+  md:items-center
           "
               >
                 <div>
@@ -250,16 +280,6 @@ export default function CaseStudiesPage() {
                   </p>
 
                   <p className="mt-2 text-foreground/80">{item.impact}</p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                    Experiment Candidate
-                  </p>
-
-                  <p className="mt-2 text-accent font-medium">
-                    {item.testType}
-                  </p>
                 </div>
               </div>
             ))}

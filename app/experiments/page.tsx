@@ -104,6 +104,10 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
+          <SectionHeading
+            title="What I'm Measuring"
+            description="Success criteria for this experiment."
+          />
           <ExperimentMetrics />
         </Container>
       </Section>

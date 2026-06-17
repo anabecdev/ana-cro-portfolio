@@ -17,11 +17,6 @@ export const recommendations = [
     testType: "Visual Identity Test",
   },
   {
-    recommendation: "Replace feature-led messaging with outcome-driven copy",
-    impact: "Higher conversion intent",
-    testType: "Messaging Experiment",
-  },
-  {
     recommendation:
       "Simplify the trial form and capture commitment progressively",
     impact: "More completed sign-ups",

@@ -46,10 +46,13 @@ export default function ScrollSequenceDiagram({
           >
             <p
               className="
-          text-[clamp(4rem,10vw,8rem)]
+              max-w-[90vw]
+              text-center
+    break-words
+          text-[clamp(2.5rem,14vw,8rem)]
           font-semibold
           tracking-tight
-          leading-none
+          leading-[0.9]
         "
             >
               {step.title}
