@@ -30,10 +30,10 @@ export default function ExperimentNextTests() {
             group
             border-t
             border-foreground/10
-            py-8
+            py-10
           "
         >
-          <div className="flex items-center gap-8">
+          <div className="flex items-start gap-8">
             <span
               className="
                 w-10
@@ -46,55 +46,25 @@ export default function ExperimentNextTests() {
               {(index + 1).toString().padStart(2, "0")}
             </span>
 
-            <h3
-              className="
-                text-xl
-                md:text-3xl
-                font-medium
-                transition-all
-                duration-700
-                ease-[cubic-bezier(0.22,1,0.36,1)]
-                group-hover:translate-x-2
-              "
-            >
-              {test.title}
-            </h3>
+            <div className="flex-1">
+              <h3
+                className="
+                  text-xl
+                  md:text-3xl
+                  font-medium
+                "
+              >
+                {test.title}
+              </h3>
 
-            <div className="flex-1 border-t border-foreground/10" />
-          </div>
-
-          <div
-            className="
-    overflow-hidden
-    grid
-    grid-rows-[0fr]
-    transition-all
-    duration-700
-    ease-[cubic-bezier(0.22,1,0.36,1)]
-    group-hover:grid-rows-[1fr]
-  "
-          >
-            <div className=" overflow-hidden">
               <p
                 className="
-                ml-[4.5rem]
-                mt-6
-                max-w-xl
-                text-lg
-                text-foreground/60
-
-                opacity-0
-                transalate-y-3
-
-                transition-all
-                duration-700
-                delay-75
-
-                ease-[cubic-bezier(0.22,1,0.36,1)]
-
-                group-hover:opacity-100
-                group-hover:translate-y-0
-              "
+                  mt-6
+                  max-w-2xl
+                  text-lg
+                  leading-relaxed
+                  text-foreground/60
+                "
               >
                 {test.hypothesis}
               </p>
