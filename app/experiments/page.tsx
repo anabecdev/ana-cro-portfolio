@@ -1,9 +1,8 @@
 import Container from "@/components/container/container";
 import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
 import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
-import ExperimentStatus from "@/components/experiment/experimentStatus/experiment-status";
 import Hero from "@/components/hero/hero";
-import MetricsDiagram from "@/components/metricsDiagram/metrics-diagram";
+import ExperimentMetrics from "@/components/experimentMetrics/experiment-metrics";
 import ScrollSequenceDiagram from "@/components/scrollSequenceDiagram/scroll-sequence-diagram";
 import Section from "@/components/section/section";
 import SectionHeading from "@/components/section/section-heading";
@@ -14,7 +13,13 @@ import { variants } from "@/components/experiment/constants/variants";
 export default async function ExperimentsPage() {
   const variant = await getVariant();
   return (
-    <main>
+    <main
+      className={`
+          transition-colors
+          duration-1000
+          ${variant === "A" ? "variant-a" : "variant-b"}
+        `}
+    >
       <Section className="min-h-[85vh] flex flex-col justify-center">
         <Container>
           <Hero
@@ -72,10 +77,26 @@ export default async function ExperimentsPage() {
           <ScrollSequenceDiagram
             direction="vertical"
             steps={[
-              { title: "Visitor" },
-              { title: "Middleware" },
-              { title: "Cookie" },
-              { title: `Variant ${variant}` },
+              {
+                title: "Visitor",
+                description:
+                  "A user arrives at the portfolio for the first time.",
+              },
+              {
+                title: "Middleware",
+                description:
+                  "Next.js middleware runs before rendering, assigning visitors to a variant at the edge.",
+              },
+              {
+                title: "Cookie",
+                description:
+                  "The assigned variant is stored in a browser cookie to keep the experience consistent across future visits.",
+              },
+              {
+                title: `Variant ${variant}`,
+                description:
+                  "The visitor sees Variant A or B and remains in that experience throughout the experiment.",
+              },
             ]}
           />
         </Container>
@@ -83,17 +104,7 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <SectionHeading
-            title="Metrics"
-            description="Data collection is currently in progress."
-          />
-          <ExperimentStatus />
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <MetricsDiagram />
+          <ExperimentMetrics />
         </Container>
       </Section>
 
