@@ -3,11 +3,20 @@ import Section from "@/components/section/section";
 import ScrollSequenceDiagram from "@/components/scrollSequenceDiagram/scroll-sequence-diagram";
 import SectionHeading from "@/components/section/section-heading";
 
+import { getVariant } from "@/lib/ab-testing/getVariant";
+
 import Image from "next/image";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const variant = await getVariant();
   return (
-    <main className="min-h-screen bg-background px-6 py-24">
+    <main
+      className={`
+          transition-colors
+          duration-1000
+          ${variant === "A" ? "variant-a" : "variant-b"}
+        `}
+    >
       <Section className="min-h-[85vh] flex flex-col justify-center">
         <Container>
           <h1
@@ -311,7 +320,7 @@ export default function AboutPage() {
             py-8
           "
               >
-                <span className="text-foreground/40">
+                <span className="text-[var(--accent)]/80">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 

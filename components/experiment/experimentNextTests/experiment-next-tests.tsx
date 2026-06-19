@@ -40,7 +40,7 @@ export default function ExperimentNextTests() {
                 shrink-0
                 font-mono
                 text-sm
-                text-foreground/40
+                text-[var(--accent)]/80
               "
             >
               {(index + 1).toString().padStart(2, "0")}

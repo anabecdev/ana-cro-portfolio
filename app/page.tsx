@@ -58,6 +58,7 @@ export default async function Home() {
                     transition-all
                     duration-300
                     hover:opacity-70
+                    text-foreground hover:text-[var(--accent)]
                   "
                 >
                   Download Resume PDF
@@ -73,10 +74,9 @@ export default async function Home() {
                 inline-flex
                 items-center
                 gap-2
-                text-foreground/80
                 transition-all
                 duration-300
-                hover:text-foreground
+                text-foreground hover:text-[var(--accent)]
                 "
               >
                 Explore the live experiment

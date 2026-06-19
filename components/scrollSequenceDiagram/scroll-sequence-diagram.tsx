@@ -2,6 +2,7 @@
 
 import { Fragment, useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import clsx from "clsx";
 
 import { ScrollSequenceDiagramProps } from "./types";
 import { createScrollSequenceDiagramAnimation } from "./scroll-sequence-diagram-animation";
@@ -76,11 +77,12 @@ export default function ScrollSequenceDiagram({
           {index < steps.length - 1 && (
             <p
               data-step
-              className={
+              className={clsx(
+                "text-[var(--accent)]",
                 direction === "vertical"
                   ? "my-12 text-[clamp(3rem,6vw,5rem)]"
-                  : "mx-4 text-[clamp(3rem,6vw,5rem)]"
-              }
+                  : "mx-4 text-[clamp(3rem,6vw,5rem)]",
+              )}
             >
               {arrow}
             </p>
