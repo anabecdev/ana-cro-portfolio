@@ -130,7 +130,9 @@ export default async function CaseStudiesPage() {
           "
               >
                 <div>
-                  <p className="text-sm text-foreground/40">{insight.number}</p>
+                  <p className="text-sm text-[var(--accent)]/80">
+                    {insight.number}
+                  </p>
 
                   <h3
                     className="

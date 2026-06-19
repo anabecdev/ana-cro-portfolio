@@ -35,7 +35,7 @@ export default function FeaturedSection({
         </p>
 
         <p className="mt-6 max-w-2xl text-body">{description}</p>
-        <blockquote className="mt-16 max-w-3xl border-l border-foreground/20 pl-8">
+        <blockquote className="mt-16 max-w-3xl border-l-2 border-[var(--accent)] pl-8">
           <p className="text-[clamp(1.75rem,3vw,2.5rem)] leading-tight tracking-tight">
             {quote}
           </p>
@@ -61,6 +61,8 @@ export default function FeaturedSection({
             gap-2
             text-sm
             font-medium
+            text-foreground 
+            hover:text-[var(--accent)]
           "
         >
           {cta}
