@@ -41,7 +41,8 @@ export default async function Home() {
                 and iterate.
               </h1>
             )}
-            <div className="mt-12 flex gap-8 text-sm">
+
+            <div className="mt-16 max-w-lg border-t border-foreground/10">
               {variant === "A" && (
                 <a
                   href="/resume/ana-becerril-resume-2026.pdf"
@@ -49,37 +50,55 @@ export default async function Home() {
                   rel="noopener noreferrer"
                   download
                   className="
-                    group
-                    inline-flex
-                    items-center
-                    gap-2
-                    font-medium
-                    text-accent
-                    transition-all
-                    duration-300
-                    hover:opacity-70
-                    text-foreground hover:text-[var(--accent)]
-                  "
+            group
+            flex
+            items-center
+            justify-between
+            border-b
+            border-foreground/10
+            py-5
+
+            transition-colors
+            duration-300
+            hover:text-[var(--accent)]
+          "
                 >
-                  Download Resume PDF
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                      Resume
+                    </p>
+
+                    <p className="mt-1">Download PDF</p>
+                  </div>
+
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
                 </a>
               )}
+
               <a
                 href="/experiments"
                 className="
-                group
-                inline-flex
-                items-center
-                gap-2
-                transition-all
-                duration-300
-                text-foreground hover:text-[var(--accent)]
-                "
+          group
+          flex
+          items-center
+          justify-between
+          py-5
+
+          transition-colors
+          duration-300
+          hover:text-[var(--accent)]
+        "
               >
-                Explore the live experiment
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                    Experiment
+                  </p>
+
+                  <p className="mt-1">Explore the live test</p>
+                </div>
+
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
