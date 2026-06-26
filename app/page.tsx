@@ -1,4 +1,5 @@
 import Container from "@/components/container/container";
+import ExperimentTracker from "@/components/analytics/experimentTracker/experiment-tracker";
 import FeaturedSection from "@/components/featuredSection/featured-section";
 import Section from "@/components/section/section";
 
@@ -8,6 +9,15 @@ export default async function Home() {
   const variant = await getVariant();
   return (
     <>
+      <ExperimentTracker
+        experiment={{
+          id: "resume_visibility",
+          name: "Resume Visibility Test",
+          hypothesis: "Showing the resume immediately increases downloads.",
+          variant,
+          page: "home",
+        }}
+      />
       <main
         className={`
           transition-colors
