@@ -10,9 +10,13 @@ export default async function Home() {
   return (
     <>
       <ExperimentTracker
-        experimentId="resume_visibility"
-        variant={variant}
-        page="home"
+        experiment={{
+          id: "resume_visibility",
+          name: "Resume Visibility Test",
+          hypothesis: "Showing the resume immediately increases downloads.",
+          variant,
+          page: "home",
+        }}
       />
       <main
         className={`

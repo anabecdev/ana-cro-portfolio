@@ -3,22 +3,21 @@
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics/analytics";
 
-type ExperimentExposureProps = {
-  experimentId: string;
+type ExperimentExposure = {
+  id: string;
+  name: string;
+  hypothesis: string;
   variant: string;
   page: string;
 };
 
-export function useExperimentExposure({
-  experimentId,
-  variant,
-  page,
-}: ExperimentExposureProps) {
+export function useExperimentExposure(experiment: ExperimentExposure) {
   useEffect(() => {
     trackEvent("experiment_exposure", {
-      experiment_id: experimentId,
-      variant,
-      page,
+      experiment_id: experiment.id,
+      experiment_name: experiment.name,
+      variant: experiment.variant,
+      page: experiment.page,
     });
-  }, [experimentId, variant, page]);
+  }, [experiment.id, experiment.name, experiment.variant, experiment.page]);
 }

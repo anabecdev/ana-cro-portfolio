@@ -2,14 +2,20 @@
 
 import { useExperimentExposure } from "@/app/hooks/useExperimentExposure";
 
-type Props = {
-  experimentId: string;
+type Experiment = {
+  id: string;
+  name: string;
+  hypothesis: string;
   variant: string;
   page: string;
 };
 
-export default function ExperimentTracker(props: Props) {
-  useExperimentExposure(props);
+type Props = {
+  experiment: Experiment;
+};
+
+export default function ExperimentTracker({ experiment }: Props) {
+  useExperimentExposure(experiment);
 
   return null;
 }
