@@ -1,6 +1,7 @@
 import Container from "@/components/container/container";
+import EditorialSection from "@/components/editorialSection/editorial-section";
 import ExperimentTracker from "@/components/analytics/experimentTracker/experiment-tracker";
-import FeaturedSection from "@/components/featuredSection/featured-section";
+import NarrativeBody from "@/components/narrativeBody/narrative-body";
 import Section from "@/components/section/section";
 
 import { getVariant } from "@/lib/ab-testing/getVariant";
@@ -119,42 +120,48 @@ export default async function Home() {
 
         <Section>
           <Container>
-            <FeaturedSection
-              experimentNumber="01"
-              title="Live Experiment"
-              subtitle="This portfolio is running a real A/B test."
-              description="Some visitors see the resume immediately. Others discover it later through the experience."
-              quote="What happens when the resume isn't the first thing people see?"
-              keywords={[
-                "A/B Testing",
-                "User Behavior",
-                "Conversion",
-                "Experimentation",
-              ]}
-              cta="Explore methodology"
-              href="/experiments"
-            />
+            <EditorialSection
+              section="Experiment 01"
+              title="Resume Visibility Test"
+              subtitle="Measuring whether..."
+            >
+              <NarrativeBody
+                description="Some visitors see the resume immediately. Others discover it later through the experience."
+                quote="What happens when the resume isn't the first thing people see?"
+                keywords={[
+                  "A/B Testing",
+                  "User Behavior",
+                  "Conversion",
+                  "Experimentation",
+                ]}
+                cta="Explore methodology"
+                href="/experiments"
+              />
+            </EditorialSection>
           </Container>
         </Section>
 
         <Section>
           <Container>
-            <FeaturedSection
-              experimentNumber="02"
+            <EditorialSection
+              section="Experiment 02"
               title="Featured Case Study"
               subtitle="Why were Shopify and WooCommerce resonating more strongly with small businesses?"
-              description="Through competitor benchmarking, UX analysis, customer research, and messaging evaluation, I explored how perception, storytelling, and product positioning influenced conversion opportunities."
-              quote="Competitors sold aspiration and simplicity. BigCommerce often communicated complexity."
-              keywords={[
-                "Benchmarking",
-                "UX Research",
-                "Positioning",
-                "Storytelling",
-                "Conversion",
-              ]}
-              cta="Read case study"
-              href="/case-studies"
-            />
+            >
+              <NarrativeBody
+                description="Through competitor benchmarking, UX analysis, customer research, and messaging evaluation, I explored how perception, storytelling, and product positioning influenced conversion opportunities."
+                quote="Competitors sold aspiration and simplicity. BigCommerce often communicated complexity."
+                keywords={[
+                  "Benchmarking",
+                  "UX Research",
+                  "Positioning",
+                  "Storytelling",
+                  "Conversion",
+                ]}
+                cta="Read case study"
+                href="/case-studies"
+              />
+            </EditorialSection>
           </Container>
         </Section>
       </main>

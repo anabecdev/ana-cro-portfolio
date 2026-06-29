@@ -1,5 +1,7 @@
+import ArtifactBody from "@/components/artifactBody/artifact-body";
 import Container from "@/components/container/container";
 import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
+import EditorialSection from "@/components/editorialSection/editorial-section";
 import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
 import Hero from "@/components/hero/hero";
 import ExperimentMetrics from "@/components/experimentMetrics/experiment-metrics";
@@ -105,19 +107,19 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <SectionHeading
-            title="Instrumentation"
-            description="Every interaction is captured through custom events and enriched with experiment medatada in Google Analytics 4."
-          />
+          <EditorialSection
+            section="Artifact 02"
+            title="Reusable Analytics Layer"
+            subtitle="A single entry point for every analytics event."
+          >
+            <ArtifactBody />
+          </EditorialSection>
         </Container>
       </Section>
 
       <Section>
         <Container>
-          <SectionHeading
-            title="What I'm Measuring"
-            description="Success criteria for this experiment."
-          />
+          <SectionHeading title="Tracked Events" />
           <ExperimentMetrics />
         </Container>
       </Section>
@@ -125,7 +127,7 @@ export default async function ExperimentsPage() {
       <Section>
         <Container>
           <SectionHeading
-            title="What I'd Test Next"
+            title="Tracked Events"
             description="Potential follow-up experiments."
           />
 
