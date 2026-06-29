@@ -1,23 +1,19 @@
 const metrics = [
   {
-    metric: "Resume Downloads",
-    purpose: "Primary conversion goal",
+    metric: "experiment_exposure",
+    purpose: "Identifies the assigned experiment variant.",
   },
   {
-    metric: "Scroll Depth",
-    purpose: "Measures content exploration",
+    metric: "download_resume",
+    purpose: "Primary conversion event.",
   },
   {
-    metric: "Case Study Views",
-    purpose: "Interest in research work",
+    metric: "contact_click",
+    purpose: "Measures hiring intent.",
   },
   {
-    metric: "Time on Page",
-    purpose: "Overall engagement signal",
-  },
-  {
-    metric: "Variant Persistence",
-    purpose: "Experiment integrity check",
+    metric: "scroll_depth",
+    purpose: "Tracks content engagement.",
   },
 ];
 

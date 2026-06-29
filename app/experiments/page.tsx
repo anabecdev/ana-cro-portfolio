@@ -1,5 +1,7 @@
+import ArtifactBody from "@/components/artifactBody/artifact-body";
 import Container from "@/components/container/container";
 import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
+import EditorialSection from "@/components/editorialSection/editorial-section";
 import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
 import Hero from "@/components/hero/hero";
 import ExperimentMetrics from "@/components/experimentMetrics/experiment-metrics";
@@ -24,7 +26,7 @@ export default async function ExperimentsPage() {
         <Container>
           <Hero
             heroType="Experiment #001"
-            title="Does showing a resume immediately increase engagement?"
+            title="Can resume visibility influence how recruiters explore a portfolio?"
             subtitle="Testing whether immediate resume visibility increases engagement and resume downloads within a CRO portfolio experience."
             child={
               <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
@@ -38,10 +40,6 @@ export default async function ExperimentsPage() {
         <Container>
           <SectionHeading title="Hypothesis" />
           <div className="mt-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">
-              I believe
-            </p>
-
             <h2
               className="
                 mt-8
@@ -85,17 +83,22 @@ export default async function ExperimentsPage() {
               {
                 title: "Middleware",
                 description:
-                  "Next.js middleware runs before rendering, assigning visitors to a variant at the edge.",
+                  "Next.js Edge Middleware randomly assigns the visitor to Variant A or B before the page is rendered.",
               },
               {
                 title: "Cookie",
                 description:
-                  "The assigned variant is stored in a browser cookie to keep the experience consistent across future visits.",
+                  "The assigned variant is persisted in a cookie to ensure a consistent experience across future visits.",
               },
               {
                 title: `Variant ${variant}`,
                 description:
-                  "The visitor sees Variant A or B and remains in that experience throughout the experiment.",
+                  "The visitor experiences the assigned version of the homepage.",
+              },
+              {
+                title: "GA4",
+                description:
+                  "A custom experiment_exposure event is sent to Google Analytics, attaching the experiment metadata for later analysis.",
               },
             ]}
           />
@@ -104,10 +107,19 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <SectionHeading
-            title="What I'm Measuring"
-            description="Success criteria for this experiment."
-          />
+          <EditorialSection
+            section="Artifact 02"
+            title="Reusable Analytics Layer"
+            subtitle="A single entry point for every analytics event."
+          >
+            <ArtifactBody />
+          </EditorialSection>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionHeading title="Tracked Events" />
           <ExperimentMetrics />
         </Container>
       </Section>
@@ -115,7 +127,7 @@ export default async function ExperimentsPage() {
       <Section>
         <Container>
           <SectionHeading
-            title="What I'd Test Next"
+            title="Tracked Events"
             description="Potential follow-up experiments."
           />
 
