@@ -47,23 +47,23 @@ export default async function AboutPage() {
             steps={[
               {
                 title: "Communication",
-                description: "How people consume information.",
+                description: "Understanding how messages influence behavior.",
               },
               {
-                title: "Audience Research",
-                description: "How people make decisions.",
+                title: "UX Research",
+                description: "Discovering what users really need.",
               },
               {
-                title: "Frontend Engineering",
-                description: "How products are built.",
+                title: "Product",
+                description: "Building experiences people can use.",
               },
               {
                 title: "Experimentation",
-                description: "How assumptions are tested.",
+                description: "Testing ideas instead of guessing.",
               },
               {
                 title: "Growth",
-                description: "How small changes compound.",
+                description: "Improving products through continuous learning.",
               },
             ]}
           />
