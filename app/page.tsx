@@ -30,13 +30,9 @@ export default async function Home() {
           <Container>
             {variant === "A" ? (
               <h1 className="text-display max-w-3xl font-semibold tracking-tight">
-                Frontend engineer,
+                Understanding people.
                 <br />
-                UX analyst,
-                <br />
-                and experimentation
-                <br />
-                practitioner.
+                Improving products.
               </h1>
             ) : (
               <h1 className="text-display max-w-3xl font-semibold tracking-tight">
@@ -45,11 +41,9 @@ export default async function Home() {
                 make decisions.
                 <br />
                 <br />
-                Then I build,
+                Then I turn insights
                 <br />
-                measure,
-                <br />
-                and iterate.
+                into experiments.
               </h1>
             )}
 
