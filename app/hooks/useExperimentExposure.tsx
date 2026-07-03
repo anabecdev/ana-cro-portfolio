@@ -12,12 +12,27 @@ type ExperimentExposure = {
 };
 
 export function useExperimentExposure(experiment: ExperimentExposure) {
+  console.log("Experiment exposure", experiment);
+  
   useEffect(() => {
-    trackEvent("experiment_exposure", {
-      experiment_id: experiment.id,
-      experiment_name: experiment.name,
-      variant: experiment.variant,
-      page: experiment.page,
-    });
-  }, [experiment.id, experiment.name, experiment.variant, experiment.page]);
+  const interval = setInterval(() => {
+    if (window.gtag) {
+      trackEvent("experiment_exposure", {
+        experiment_id: experiment.id,
+        experiment_name: experiment.name,
+        variant: experiment.variant,
+        page: experiment.page,
+      });
+
+      clearInterval(interval);
+    }
+  }, 100);
+
+  return () => clearInterval(interval);
+}, [
+  experiment.id,
+  experiment.name,
+  experiment.variant,
+  experiment.page,
+]);
 }
