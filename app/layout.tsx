@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   description: "A live experiment as a portfolio",
 };
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const isDevelopment = process.env.NODE_ENV === "development";
+
+const GA_MEASUREMENT_ID = isDevelopment
+  ? process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID_DEV
+  : process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export default function RootLayout({
   children,
@@ -39,6 +43,8 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+     {GA_MEASUREMENT_ID && (
+    <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
@@ -49,11 +55,14 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}',{
-            debug_mode: ${process.env.NODE_ENV === "development"}
+
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            debug_mode: ${isDevelopment}
           });
         `}
       </Script>
+    </>
+  )}
     </html>
   );
 }
