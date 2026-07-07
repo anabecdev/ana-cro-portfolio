@@ -248,6 +248,45 @@ export default async function AboutPage() {
                 →
               </span>
             </a>
+
+            <a
+              href="mailto:anabecdev@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+          flex
+          items-center
+          justify-between
+          border-b
+          border-foreground/10
+          py-8
+          group
+        "
+            >
+              <span className="text-foreground/40">01</span>
+
+              <span
+                className="
+            flex-1
+            ml-8
+            text-[clamp(1.5rem,3vw,3rem)]
+            font-semibold
+            tracking-tight
+          "
+              >
+                Email me!
+              </span>
+
+              <span
+                className="
+            transition-transform
+            duration-300
+            group-hover:translate-x-1
+          "
+              >
+                →
+              </span>
+            </a>
           </div>
         </Container>
       </Section>

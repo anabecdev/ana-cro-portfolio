@@ -108,6 +108,32 @@ export default async function Home() {
                   →
                 </span>
               </a>
+              <a
+                href="mailto:anabecdev@gmail.com"
+                className="
+          group
+          flex
+          items-center
+          justify-between
+          py-5
+
+          transition-colors
+          duration-300
+          hover:text-[var(--accent)]
+        "
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                    Contact
+                  </p>
+
+                  <p className="mt-1">Let's Talk!</p>
+                </div>
+
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
             </div>
           </Container>
         </Section>
