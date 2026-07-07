@@ -1,13 +1,13 @@
+import { getUTMParams } from "./utm";
+
 export const trackEvent = (
   eventName: string,
   params?: Record<string, string | number>,
 ) => {
-  
-  if (typeof window === "undefined") return;
+  if (!window.gtag) return;
 
-  console.log("gtag:", window.gtag);
-
-  console.log("Sending event", eventName, params);
-
-  window.gtag?.("event", eventName, params);
+  window.gtag?.("event", eventName, {
+    ...params,
+    ...getUTMParams(),
+  });
 };
