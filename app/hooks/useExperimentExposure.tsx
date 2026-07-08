@@ -1,22 +1,26 @@
 "use client";
 
 import { useEffect } from "react";
-import { trackEvent } from "@/lib/analytics/analytics";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 type ExperimentExposure = {
   id: string;
   name: string;
-  hypothesis: string;
   variant: string;
   page: string;
 };
 
 export function useExperimentExposure(experiment: ExperimentExposure) {
-  console.log("Experiment exposure", experiment);
-  
   useEffect(() => {
-  const interval = setInterval(() => {
-    if (window.gtag) {
+    const storageKey = `experiment_exposure_${experiment.id}`;
+
+    if (sessionStorage.getItem(storageKey)) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      if (!window.gtag) return;
+
       trackEvent("experiment_exposure", {
         experiment_id: experiment.id,
         experiment_name: experiment.name,
@@ -24,15 +28,11 @@ export function useExperimentExposure(experiment: ExperimentExposure) {
         page: experiment.page,
       });
 
-      clearInterval(interval);
-    }
-  }, 100);
+      sessionStorage.setItem(storageKey, "true");
 
-  return () => clearInterval(interval);
-}, [
-  experiment.id,
-  experiment.name,
-  experiment.variant,
-  experiment.page,
-]);
+      clearInterval(interval);
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [experiment.id, experiment.name, experiment.variant, experiment.page]);
 }
