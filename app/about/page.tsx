@@ -2,6 +2,7 @@ import Container from "@/components/container/container";
 import Section from "@/components/section/section";
 import ScrollSequenceDiagram from "@/components/scrollSequenceDiagram/scroll-sequence-diagram";
 import SectionHeading from "@/components/section/section-heading";
+import TrackedLink from "@/components/analytics/tracked-link";
 
 import { getVariant } from "@/lib/ab-testing/getVariant";
 
@@ -172,121 +173,141 @@ export default async function AboutPage() {
           />
 
           <div className="mt-20">
-            <a
+            <TrackedLink
               href="https://www.linkedin.com/in/anabecbel/"
               target="_blank"
               rel="noopener noreferrer"
+              event="contact_click"
+              params={{
+                contact_method: "linkedin",
+                page: "about",
+                cta_location: "connect",
+              }}
               className="
-          flex
-          items-center
-          justify-between
-          border-b
-          border-foreground/10
-          py-8
-          group
-        "
+                flex
+                items-center
+                justify-between
+                border-b
+                border-foreground/10
+                py-8
+                group
+              "
             >
               <span className="text-foreground/40">01</span>
 
               <span
                 className="
-            flex-1
-            ml-8
-            text-[clamp(1.5rem,3vw,3rem)]
-            font-semibold
-            tracking-tight
-          "
+                  flex-1
+                  ml-8
+                  text-[clamp(1.5rem,3vw,3rem)]
+                  font-semibold
+                  tracking-tight
+                "
               >
                 LinkedIn
               </span>
 
               <span
                 className="
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
               >
                 →
               </span>
-            </a>
+            </TrackedLink>
 
-            <a
+            <TrackedLink
               href="/resume/ana-becerril-resume-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               download
+              event="file_download"
+              params={{
+                file_name: "ana-becerril-resume-2026.pdf",
+                page: "about",
+                cta_location: "connect",
+                variant,
+              }}
               className="
-          flex
-          items-center
-          justify-between
-          border-b
-          border-foreground/10
-          py-8
-          group
-        "
+                flex
+                items-center
+                justify-between
+                border-b
+                border-foreground/10
+                py-8
+                group
+              "
             >
               <span className="text-foreground/40">02</span>
 
               <span
                 className="
-            flex-1
-            ml-8
-            text-[clamp(1.5rem,3vw,3rem)]
-            font-semibold
-            tracking-tight
-          "
+                  flex-1
+                  ml-8
+                  text-[clamp(1.5rem,3vw,3rem)]
+                  font-semibold
+                  tracking-tight
+                "
               >
                 Download Resume
               </span>
 
               <span
                 className="
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
               >
                 →
               </span>
-            </a>
+            </TrackedLink>
 
-            <a
+            <TrackedLink
               href="mailto:anabecdev@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              event="contact_click"
+              params={{
+                contact_method: "email",
+                page: "about",
+                cta_location: "connect",
+                variant,
+              }}
               className="
-          flex
-          items-center
-          justify-between
-          border-b
-          border-foreground/10
-          py-8
-          group
-        "
+                flex
+                items-center
+                justify-between
+                border-b
+                border-foreground/10
+                py-8
+                group
+              "
             >
-              <span className="text-foreground/40">01</span>
+              <span className="text-foreground/40">03</span>
 
               <span
                 className="
-            flex-1
-            ml-8
-            text-[clamp(1.5rem,3vw,3rem)]
-            font-semibold
-            tracking-tight
-          "
+                  flex-1
+                  ml-8
+                  text-[clamp(1.5rem,3vw,3rem)]
+                  font-semibold
+                  tracking-tight
+                "
               >
                 Email me!
               </span>
 
               <span
                 className="
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
               >
                 →
               </span>
-            </a>
+            </TrackedLink>
           </div>
         </Container>
       </Section>

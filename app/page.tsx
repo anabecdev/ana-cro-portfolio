@@ -59,7 +59,7 @@ export default async function Home() {
                   params={{
                     file_name: "ana-becerril-resume-2026.pdf",
                     page: "home",
-                    location: "hero",
+                    cta_location: "hero",
                     variant,
                   }}
                   className="
@@ -123,7 +123,8 @@ export default async function Home() {
                 params={{
                   contact_method: "email",
                   page: "home",
-                  location: "hero",
+                  cta_location: "hero",
+                  variant
                 }}
                 className="
                     group
