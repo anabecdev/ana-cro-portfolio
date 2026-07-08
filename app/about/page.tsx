@@ -182,6 +182,7 @@ export default async function AboutPage() {
                 contact_method: "linkedin",
                 page: "about",
                 cta_location: "connect",
+                variant
               }}
               className="
                 flex
