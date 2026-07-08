@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { trackEvent } from "@/lib/analytics/analytics";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 type ExperimentExposure = {
   id: string;

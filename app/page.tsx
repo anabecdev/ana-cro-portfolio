@@ -1,8 +1,9 @@
 import Container from "@/components/container/container";
 import EditorialSection from "@/components/editorialSection/editorial-section";
-import ExperimentTracker from "@/components/analytics/experimentTracker/experiment-tracker";
+import ExperimentTracker from "@/components/analytics/experiment-tracker";
 import NarrativeBody from "@/components/narrativeBody/narrative-body";
 import Section from "@/components/section/section";
+import TrackedLink from "@/components/analytics/tracked-link";
 
 import { getVariant } from "@/lib/ab-testing/getVariant";
 
@@ -49,24 +50,30 @@ export default async function Home() {
 
             <div className="mt-16 max-w-lg border-t border-foreground/10">
               {variant === "A" && (
-                <a
+                <TrackedLink
                   href="/resume/ana-becerril-resume-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download
+                  event="file_download"
+                  params={{
+                    file_name: "ana-becerril-resume-2026.pdf",
+                    page: "home",
+                    location: "hero",
+                    variant,
+                  }}
                   className="
-            group
-            flex
-            items-center
-            justify-between
-            border-b
-            border-foreground/10
-            py-5
-
-            transition-colors
-            duration-300
-            hover:text-[var(--accent)]
-          "
+                    group
+                    flex
+                    items-center
+                    justify-between
+                    border-b
+                    border-foreground/10
+                    py-5
+                    transition-colors
+                    duration-300
+                    hover:text-[var(--accent)]
+                  "
                 >
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
@@ -79,22 +86,23 @@ export default async function Home() {
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
-                </a>
+                </TrackedLink>
               )}
 
               <a
                 href="/experiments"
                 className="
-          group
-          flex
-          items-center
-          justify-between
-          py-5
-
-          transition-colors
-          duration-300
-          hover:text-[var(--accent)]
-        "
+                    group
+                    flex
+                    items-center
+                    justify-between
+                    border-b
+                    border-foreground/10
+                    py-5
+                    transition-colors
+                    duration-300
+                    hover:text-[var(--accent)]
+                  "
               >
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
@@ -108,19 +116,25 @@ export default async function Home() {
                   →
                 </span>
               </a>
-              <a
-                href="mailto:anabecdev@gmail.com"
-                className="
-          group
-          flex
-          items-center
-          justify-between
-          py-5
 
-          transition-colors
-          duration-300
-          hover:text-[var(--accent)]
-        "
+              <TrackedLink
+                href="mailto:anabecdev@gmail.com"
+                event="contact_click"
+                params={{
+                  contact_method: "email",
+                  page: "home",
+                  location: "hero",
+                }}
+                className="
+                    group
+                    flex
+                    items-center
+                    justify-between
+                    py-5
+                    transition-colors
+                    duration-300
+                    hover:text-[var(--accent)]
+                  "
               >
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
@@ -133,7 +147,7 @@ export default async function Home() {
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </a>
+              </TrackedLink>
             </div>
           </Container>
         </Section>
