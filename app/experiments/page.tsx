@@ -107,18 +107,6 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <EditorialSection
-            section="Artifact 02"
-            title="Reusable Analytics Layer"
-            subtitle="A single entry point for every analytics event."
-          >
-            <ArtifactBody />
-          </EditorialSection>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
           <SectionHeading title="Tracked Events" />
           <ExperimentMetrics />
         </Container>
