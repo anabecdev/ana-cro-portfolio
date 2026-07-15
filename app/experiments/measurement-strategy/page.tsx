@@ -127,24 +127,62 @@ export default async function MeasurementStrategyPage() {
 
       <Section>
         <Container>
-          // Cambiar esto por el scrollSequenceDiagram
           <SectionHeading
             title="Conversion Journey"
             description="The expected sequence of interactions used to evaluate experiment success."
           />
-          <ExperimentMetrics />
+          <ScrollSequenceDiagram
+            direction="vertical"
+            steps={[
+              {
+                title: "Landing Page",
+                description:
+                  "GA4 Event: page_view\nCaptures the visitor's entry into the experiment.",
+              },
+              {
+                title: "Experiment Exposure",
+                description:
+                  "GA4 Event: experiment_exposure\nAssigns and records the visitor's experiment variant.",
+              },
+              {
+                title: "Meaningful Scroll",
+                description:
+                  "GA4 Event: scroll_depth\nMeasures engagement with the portfolio content.",
+              },
+              {
+                title: "Resume Download",
+                description:
+                  "GA4 Event: download_resume\nPrimary conversion used to validate the hypothesis.",
+              },
+              {
+                title: "Contact Intent",
+                description:
+                  "GA4 Event: contact_click\nFinal conversion indicating potential hiring intent.",
+              },
+            ]}
+          />
         </Container>
       </Section>
 
       <Section>
         <Container>
           <EditorialSection
-            section="Artifact 02"
-            title="Reusable Analytics Layer"
-            subtitle="A single entry point for every analytics event."
+            section="Architecture"
+            title="Analytics Pipeline"
+            subtitle="A reusable analytics abstraction used to instrument every meaningful user interaction.."
           >
             <ArtifactBody />
           </EditorialSection>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionHeading
+            title="Event Taxonomy"
+            description="Every measurable interaction in the Resume Visibility experiment, including its trigger, tracked parameters, associated KPI, and business purpose."
+          />
+          <ExperimentMetrics />
         </Container>
       </Section>
     </main>

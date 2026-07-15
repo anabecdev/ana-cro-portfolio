@@ -107,15 +107,8 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <SectionHeading title="Tracked Events" />
-          <ExperimentMetrics />
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
           <SectionHeading
-            title="Tracked Events"
+            title="Future Experiments"
             description="Potential follow-up experiments."
           />
 
