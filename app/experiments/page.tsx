@@ -130,37 +130,35 @@ export default async function ExperimentsPage() {
             >
               How do you know an experiment worked?
             </h2>
-
-            <p
-              className="
-          mt-10
-          max-w-2xl
-          text-lg
-          leading-relaxed
-          text-foreground/60
-        "
-            >
-              Explore the complete measurement strategy behind this experiment,
-              including KPIs, event mapping, tracking architecture, and GA4
-              implementation.
-            </p>
-
             <a
               href="/experiments/measurement-strategy"
               className="
-          group
-          mt-16
-          inline-flex
-          items-center
-          gap-3
-          text-lg
-          font-medium
-          transition-colors
-          hover:text-[var(--accent)]
-        "
+                    group
+                    flex
+                    items-center
+                    mt-16
+                    justify-between
+                    border-y
+                    border-foreground/10
+                    py-5
+                    transition-colors
+                    duration-300
+                    hover:text-[var(--accent)]
+                  "
             >
-              View Measurement Strategy
-              <span className="transition-transform group-hover:translate-x-1">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                  Documentation
+                </p>
+
+                <p className="mt-1">Explore the Measurement Strategy</p>
+
+                <p className="mt-2 text-sm text-foreground/60">
+                  KPIs, event mapping, GA4 instrumentation and reporting.
+                </p>
+              </div>
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </a>

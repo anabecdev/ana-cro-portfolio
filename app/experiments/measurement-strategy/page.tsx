@@ -41,7 +41,7 @@ export default async function MeasurementStrategyPage() {
         <Container>
           <SectionHeading title="Why Measure?" />
           <div className="mt-16">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <p
                 className="
                         mt-16
