@@ -1,17 +1,20 @@
-type NarrativeBodyProps = {
+type NarrativeAction = {
+  label: string;
+  href: string;
+};
+
+export type NarrativeBodyProps = {
   description: string;
   quote: string;
   keywords?: string[];
-  cta?: string;
-  href?: string;
+  actions?: NarrativeAction[];
 };
 
 export default function NarrativeBody({
+  actions,
   description,
   quote,
   keywords,
-  cta,
-  href,
 }: NarrativeBodyProps) {
   return (
     <>
@@ -33,17 +36,31 @@ export default function NarrativeBody({
         </div>
       ) : null}
 
-      {cta && (
-        <a
-          href={href}
-          className="group mt-12 inline-flex items-center gap-2 text-sm font-medium hover:text-[var(--accent)]"
-        >
-          {cta}
-          <span className="transition-transform group-hover:translate-x-1">
-            →
-          </span>
-        </a>
-      )}
+      <div className="mt-12 space-y-4 max-w-lg">
+        {actions?.map((action) => (
+          <a
+            key={action.href}
+            href={action.href}
+            className="
+        group
+        flex
+        items-center
+        justify-between
+        border-b
+        border-foreground/10
+        py-4
+        transition-colors
+        hover:text-[var(--accent)]
+      "
+          >
+            <span>{action.label}</span>
+
+            <span className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </a>
+        ))}
+      </div>
     </>
   );
 }

@@ -1,76 +1,117 @@
-const metrics = [
+const trackedEvents = [
   {
-    metric: "experiment_exposure",
-    purpose: "Identifies the assigned experiment variant.",
+    event: "page_view",
+    trigger: "Landing page visit",
+    parameters: "page_title, page_location",
+    kpi: "Traffic",
   },
   {
-    metric: "download_resume",
-    purpose: "Primary conversion event.",
+    event: "experiment_exposure",
+    trigger: "Page load",
+    parameters: "experiment_name, variant",
+    kpi: "Exposure",
   },
   {
-    metric: "contact_click",
-    purpose: "Measures hiring intent.",
+    event: "scroll_depth",
+    trigger: "75% page scroll",
+    parameters: "percent_scrolled",
+    kpi: "Engagement",
   },
   {
-    metric: "scroll_depth",
-    purpose: "Tracks content engagement.",
+    event: "download_resume",
+    trigger: "Resume CTA click",
+    parameters: "file_name, variant",
+    kpi: "Primary Conversion",
+  },
+  {
+    event: "contact_click",
+    trigger: "Contact CTA click",
+    parameters: "method",
+    kpi: "Hiring Intent",
   },
 ];
 
 export default function ExperimentMetrics() {
   return (
-    <div className="mt-20 max-w-5xl">
-      <div
-        className="
-          grid
-          grid-cols-[1.5fr_1fr]
-          border-b
-          border-foreground/10
-          pb-6
-        "
-      >
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">
-          Metric
-        </p>
+    <div className="mt-20 overflow-x-auto">
+      <table className="min-w-full border-collapse">
+        <thead>
+          <tr className="border-b border-foreground/10">
+            <th className="py-4 text-left text-xs uppercase tracking-[0.3em] text-foreground/40">
+              Event
+            </th>
 
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">
-          Purpose
-        </p>
-      </div>
+            <th className="py-4 text-left text-xs uppercase tracking-[0.3em] text-foreground/40">
+              Trigger
+            </th>
 
-      {metrics.map((metric) => (
-        <div
-          key={metric.metric}
-          className="
-            grid
-            grid-cols-[1.5fr_1fr]
-            gap-8
-            border-b
-            border-foreground/10
-            py-8
-          "
-        >
-          <h3
-            className="
-              text-2xl
-              md:text-4xl
-              font-medium
-              tracking-tight
-            "
-          >
-            {metric.metric}
-          </h3>
+            <th className="py-4 text-left text-xs uppercase tracking-[0.3em] text-foreground/40">
+              Parameters
+            </th>
 
-          <p
-            className="
-              self-center
-              text-foreground/60
-            "
-          >
-            {metric.purpose}
-          </p>
-        </div>
-      ))}
+            <th className="py-4 text-left text-xs uppercase tracking-[0.3em] text-foreground/40">
+              KPI
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {trackedEvents.map((metric) => (
+            <tr
+              key={metric.event}
+              className="
+                border-b
+                border-foreground/10
+                transition-colors
+                hover:bg-foreground/[0.02]
+              "
+            >
+              <td className="py-6 pr-8">
+                <code
+                  className="
+                    rounded-md
+                    bg-foreground/5
+                    px-3
+                    py-2
+                    font-mono
+                    text-sm
+                  "
+                >
+                  {metric.event}
+                </code>
+              </td>
+
+              <td className="py-6 pr-8 text-foreground/70">
+                {metric.trigger}
+              </td>
+
+              <td className="py-6 pr-8">
+                <code className="font-mono text-sm text-foreground/60">
+                  {metric.parameters}
+                </code>
+              </td>
+
+              <td className="py-6">
+                <span
+                  className="
+                    rounded-full
+                    bg-[var(--accent)]/10
+                    px-3
+                    py-1
+                    text-xs
+                    font-medium
+                    uppercase
+                    tracking-wide
+                    text-[var(--accent)]
+                  "
+                >
+                  {metric.kpi}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

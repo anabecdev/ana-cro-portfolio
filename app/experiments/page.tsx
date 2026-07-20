@@ -1,10 +1,6 @@
-import ArtifactBody from "@/components/artifactBody/artifact-body";
 import Container from "@/components/container/container";
 import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
-import EditorialSection from "@/components/editorialSection/editorial-section";
-import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
 import Hero from "@/components/hero/hero";
-import ExperimentMetrics from "@/components/experimentMetrics/experiment-metrics";
 import ScrollSequenceDiagram from "@/components/scrollSequenceDiagram/scroll-sequence-diagram";
 import Section from "@/components/section/section";
 import SectionHeading from "@/components/section/section-heading";
@@ -107,31 +103,66 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <EditorialSection
-            section="Artifact 02"
-            title="Reusable Analytics Layer"
-            subtitle="A single entry point for every analytics event."
-          >
-            <ArtifactBody />
-          </EditorialSection>
-        </Container>
-      </Section>
+          <SectionHeading title="Beyond the Experiment" />
 
-      <Section>
-        <Container>
-          <SectionHeading title="Tracked Events" />
-          <ExperimentMetrics />
-        </Container>
-      </Section>
+          <div className="mt-16 max-w-5xl">
+            <p
+              className="
+          text-[clamp(1.5rem,2.5vw,2.4rem)]
+          leading-[1.35]
+          font-light
+          text-foreground/80
+        "
+            >
+              Running an A/B test isn't only about changing a UI. Every
+              experiment begins with a measurement strategy.
+            </p>
 
-      <Section>
-        <Container>
-          <SectionHeading
-            title="Tracked Events"
-            description="Potential follow-up experiments."
-          />
+            <h2
+              className="
+          mt-16
+          max-w-4xl
+          text-[clamp(3rem,6vw,6rem)]
+          leading-none
+          font-semibold
+          tracking-tight
+        "
+            >
+              How do you know an experiment worked?
+            </h2>
+            <a
+              href="/experiments/measurement-strategy"
+              className="
+                    group
+                    flex
+                    items-center
+                    mt-16
+                    justify-between
+                    border-y
+                    border-foreground/10
+                    py-5
+                    transition-colors
+                    duration-300
+                    hover:text-[var(--accent)]
+                  "
+            >
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                  Documentation
+                </p>
 
-          <ExperimentNextTests />
+                <p className="mt-1">Explore the Measurement Strategy</p>
+
+                <p className="mt-2 text-sm text-foreground/60">
+                  KPIs, event mapping, GA4 instrumentation and reporting.
+                </p>
+              </div>
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
         </Container>
       </Section>
     </main>

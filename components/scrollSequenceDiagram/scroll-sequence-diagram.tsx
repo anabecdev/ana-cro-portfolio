@@ -63,9 +63,11 @@ export default function ScrollSequenceDiagram({
               <p
                 className="
             mt-4
-            max-w-xl
+            max-w-2xl
+            whitespace-pre-line
             text-center
             text-lg
+            leading-relaxed
             text-foreground/60
           "
               >

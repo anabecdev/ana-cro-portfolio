@@ -124,7 +124,7 @@ export default async function Home() {
                   contact_method: "email",
                   page: "home",
                   cta_location: "hero",
-                  variant
+                  variant,
                 }}
                 className="
                     group
@@ -158,19 +158,27 @@ export default async function Home() {
             <EditorialSection
               section="Experiment 01"
               title="Resume Visibility Test"
-              subtitle="Measuring whether..."
+              subtitle="Does showing the resume immediately influence recruiter behavior?"
             >
               <NarrativeBody
-                description="Some visitors see the resume immediately. Others discover it later through the experience."
-                quote="What happens when the resume isn't the first thing people see?"
+                description="A live A/B test comparing two portfolio experiences to understand how resume visibility affects engagement, exploration, and resume downloads."
+                quote="Can a small UX decision change how recruiters interact with a portfolio?"
                 keywords={[
                   "A/B Testing",
-                  "User Behavior",
-                  "Conversion",
+                  "GA4",
+                  "Conversion Rate Optimization",
                   "Experimentation",
                 ]}
-                cta="Explore methodology"
-                href="/experiments"
+                actions={[
+                  {
+                    label: "View Experiment Design",
+                    href: "/experiments",
+                  },
+                  {
+                    label: "Measurement Strategy",
+                    href: "/experiments/measurement-strategy",
+                  },
+                ]}
               />
             </EditorialSection>
           </Container>
@@ -193,8 +201,12 @@ export default async function Home() {
                   "Storytelling",
                   "Conversion",
                 ]}
-                cta="Read case study"
-                href="/case-studies"
+                actions={[
+                  {
+                    label: "Read Case Study",
+                    href: "/case-studies",
+                  },
+                ]}
               />
             </EditorialSection>
           </Container>

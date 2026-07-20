@@ -1,7 +1,7 @@
 type Props = {
-  number: string;
-  title: string;
-  children: React.ReactNode;
+  number?: string;
+  title?: string;
+  children?: React.ReactNode;
 };
 
 export default function EditorialBlock({ number, title, children }: Props) {
