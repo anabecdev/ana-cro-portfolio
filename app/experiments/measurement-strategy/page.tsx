@@ -1,5 +1,4 @@
 import Container from "@/components/container/container";
-import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
 import EditorialSection from "@/components/editorialSection/editorial-section";
 import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
 import Hero from "@/components/hero/hero";
@@ -11,7 +10,6 @@ import SectionHeading from "@/components/section/section-heading";
 import { getVariant } from "@/lib/ab-testing/getVariant";
 import { measurementKpis } from "@/components/experiment/constants/measurement-kpis";
 import ArtifactBody from "@/components/artifactBody/artifact-body";
-import EditorialBlock from "@/components/artifactBody/editorial-block";
 
 export default async function MeasurementStrategyPage() {
   const variant = await getVariant();
@@ -183,6 +181,17 @@ export default async function MeasurementStrategyPage() {
             description="Every measurable interaction in the Resume Visibility experiment, including its trigger, tracked parameters, associated KPI, and business purpose."
           />
           <ExperimentMetrics />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionHeading
+            title="Future Experiments"
+            description="Potential follow-up experiments."
+          />
+
+          <ExperimentNextTests />
         </Container>
       </Section>
     </main>

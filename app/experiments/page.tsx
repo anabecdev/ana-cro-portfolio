@@ -1,10 +1,6 @@
-import ArtifactBody from "@/components/artifactBody/artifact-body";
 import Container from "@/components/container/container";
 import ComparisonGrid from "@/components/comparisonGrid/comparison-grid";
-import EditorialSection from "@/components/editorialSection/editorial-section";
-import ExperimentNextTests from "@/components/experiment/experimentNextTests/experiment-next-tests";
 import Hero from "@/components/hero/hero";
-import ExperimentMetrics from "@/components/experimentMetrics/experiment-metrics";
 import ScrollSequenceDiagram from "@/components/scrollSequenceDiagram/scroll-sequence-diagram";
 import Section from "@/components/section/section";
 import SectionHeading from "@/components/section/section-heading";
@@ -107,12 +103,68 @@ export default async function ExperimentsPage() {
 
       <Section>
         <Container>
-          <SectionHeading
-            title="Future Experiments"
-            description="Potential follow-up experiments."
-          />
+          <SectionHeading title="Beyond the Experiment" />
 
-          <ExperimentNextTests />
+          <div className="mt-16 max-w-5xl">
+            <p
+              className="
+          text-[clamp(1.5rem,2.5vw,2.4rem)]
+          leading-[1.35]
+          font-light
+          text-foreground/80
+        "
+            >
+              Running an A/B test isn't only about changing a UI. Every
+              experiment begins with a measurement strategy.
+            </p>
+
+            <h2
+              className="
+          mt-16
+          max-w-4xl
+          text-[clamp(3rem,6vw,6rem)]
+          leading-none
+          font-semibold
+          tracking-tight
+        "
+            >
+              How do you know an experiment worked?
+            </h2>
+
+            <p
+              className="
+          mt-10
+          max-w-2xl
+          text-lg
+          leading-relaxed
+          text-foreground/60
+        "
+            >
+              Explore the complete measurement strategy behind this experiment,
+              including KPIs, event mapping, tracking architecture, and GA4
+              implementation.
+            </p>
+
+            <a
+              href="/experiments/measurement-strategy"
+              className="
+          group
+          mt-16
+          inline-flex
+          items-center
+          gap-3
+          text-lg
+          font-medium
+          transition-colors
+          hover:text-[var(--accent)]
+        "
+            >
+              View Measurement Strategy
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
         </Container>
       </Section>
     </main>
